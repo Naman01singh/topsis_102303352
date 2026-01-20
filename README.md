@@ -9,6 +9,19 @@
 ## Overview
 This is a Python package that implements the **Technique for Order of Preference by Similarity to Ideal Solution (TOPSIS)**. It is a multi-criteria decision-making (MCDM) method used to rank alternatives based on their distance from the "Ideal Best" and "Ideal Worst" solutions.
 
+---
+
+**Live Link**
+
+The application is live at: https://namansingh.pythonanywhere.com/
+
+---
+
+**Screenshot of the Interface**
+
+<img width="500" height="302" alt="Screenshot 2026-01-20 at 10 45 06 PM" src="https://github.com/user-attachments/assets/292f172a-d03a-4b6a-836b-efb3496bcd4d" />
+
+---
 
 
 ## Installation
