@@ -1,42 +1,58 @@
-**1. Methodology**
+# Topsis-Naman-102303352
 
-The TOPSIS (Technique for Order of Preference by Similarity to Ideal Solution) follows a structured mathematical approach:
+**For:** UCS654 (Predictive Analytics)  
+**Submitted by:** Naman Singh  
+**Roll Number:** 102303352  
 
-Data Collection: Input CSV file containing alternatives and criteria.
+---
 
-Data Pre-Processing: Normalization of the decision matrix.
+## Overview
+This is a Python package that implements the **Technique for Order of Preference by Similarity to Ideal Solution (TOPSIS)**. It is a multi-criteria decision-making (MCDM) method used to rank alternatives based on their distance from the "Ideal Best" and "Ideal Worst" solutions.
 
-Model Training: Applying weights to the normalized matrix.
 
-Model Testing: Calculating distances from the Ideal Best (+) and Ideal Worst (-) solutions.
 
-Result Analysis: Computing the TOPSIS score and final ranking.
+## Installation
 
--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-**2. Description**
+You can install the package directly from PyPI using the following command:
 
-This web service automates the ranking of alternatives based on multiple criteria.
+```bash
+pip install Topsis-Naman-102303352
 
-Functionality: Users upload a CSV and receive results via email.
 
-Core Library: Built with Python (Flask), using Pandas and NumPy for calculations.
+## Usage
 
-Input Requirements: CSV file with numerical criteria (first column must be the name/ID).
+The package is designed to be executed via the command line. Use the following format:
 
-Other Information: Secure email delivery implemented via SMTP.
+```bash
+topsis <InputDataFile> <Weights> <Impacts> <ResultFileName>
 
--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+## Example Input
 
-**3. Input / Output**
+The input file must be a CSV where the first column contains the names of the alternatives and the subsequent columns contain numeric data.
 
-<img width="938" height="171" alt="image" src="https://github.com/user-attachments/assets/d4406f93-a413-4132-99d0-1c4002c70691" />
+Model,Storage,Camera,Price,Looks
+M1,16,12,250,5
+M2,16,8,200,3
+M3,32,16,300,4
+M4,32,8,275,4
 
--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+## Example Command
 
-**4. Live Link**
-The application is live at: https://namansingh.pythonanywhere.com/
+```bash
+topsis data.csv "1,1,1,2,1" "+,+,-,+,+" result.csv
 
--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-**5. Screenshot of the Interface**
+## Example Output
 
-<img width="500" height="302" alt="Screenshot 2026-01-20 at 10 45 06 PM" src="https://github.com/user-attachments/assets/13786d62-a6af-45a4-9bc3-5613896dced5" />
+After running the command, the package performs Vector Normalization and calculates the Euclidean Distance from the Ideal Best and Ideal Worst solutions to generate the final scores and rankings.
+
+The resulting file will contain your original columns plus the calculated Topsis Score and Rank:
+
+Model,Storage,Camera,Price,Looks,TopsisScore,Rank
+M1,16,12,250,5,0.5342,3
+M2,16,8,200,3,0.3891,4
+M3,32,16,300,4,0.7215,1
+M4,32,8,275,4,0.6128,2
+
+## License
+
+https://choosealicense.com/licenses/mit/
